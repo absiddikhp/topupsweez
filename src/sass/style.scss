@@ -19,6 +19,72 @@ header {
   input {
     outline: none;
     border: 3px solid green;
+    box-shadow: none;
     @apply rounded-md;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// =========== Footer Design ==================
+footer {
+  margin-top: auto;
+  font-weight: 300;
+  .footer_support {
+    border: 1px solid rgba(207, 202, 202, 0.856);
+    &:hover {
+      border: 1px solid #eee;
+      cursor: pointer;
+    }
+    i {
+      color: #eee;
+      font-size: 1.6rem;
+    }
+    div {
+      p {
+        color: #eee;
+        font-size: 0.9rem;
+        font-weight: 300;
+      }
+      h1 {
+        font-weight: 400;
+      }
+    }
+  }
+  ul {
+    .social_icon {
+      font-size: 1.6rem;
+      i {
+        &:hover {
+          color: rgb(203, 196, 196);
+          cursor: pointer;
+        }
+      }
+    }
+    li {
+      color: rgba(207, 202, 202, 0.856);
+      // line-height: 2.3rem;
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+      &:hover {
+        color: #eee;
+        transition: 0.2s linear;
+      }
+    }
+  }
+}
+
+// ============= Login page ===============
+#login {
+  min-height: 90vh;
+}
+
+// ============ userInfo ================
+.userInfo {
+  font-weight: 300;
+  i {
+    color: rgb(113, 113, 113);
   }
 }

@@ -18,6 +18,76 @@ body {
 header input {
   outline: none;
   border: 3px solid green;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   @apply rounded-md;
+}
+
+header input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+footer {
+  margin-top: auto;
+  font-weight: 300;
+}
+
+footer .footer_support {
+  border: 1px solid rgba(207, 202, 202, 0.856);
+}
+
+footer .footer_support:hover {
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+footer .footer_support i {
+  color: #eee;
+  font-size: 1.6rem;
+}
+
+footer .footer_support div p {
+  color: #eee;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+footer .footer_support div h1 {
+  font-weight: 400;
+}
+
+footer ul .social_icon {
+  font-size: 1.6rem;
+}
+
+footer ul .social_icon i:hover {
+  color: #cbc4c4;
+  cursor: pointer;
+}
+
+footer ul li {
+  color: rgba(207, 202, 202, 0.856);
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+footer ul li:hover {
+  color: #eee;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+#login {
+  min-height: 90vh;
+}
+
+.userInfo {
+  font-weight: 300;
+}
+
+.userInfo i {
+  color: #717171;
 }
 /*# sourceMappingURL=style.css.map */
