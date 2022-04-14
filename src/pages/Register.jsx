@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
+    document.title = "Register"
     const navigate = useNavigate()
     const alert = useAlert()
     const [input, setInput] = useState({

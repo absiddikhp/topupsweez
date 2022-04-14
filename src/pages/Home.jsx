@@ -1,7 +1,6 @@
 import React from 'react'
 import HomeSlider from '../components/HomeSlider'
 import TopUp from '../components/TopUp'
-
 const Home = () => {
     return (
         <><div className='container'>

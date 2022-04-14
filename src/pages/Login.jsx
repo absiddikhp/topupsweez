@@ -3,6 +3,7 @@ import { useAlert } from 'react-alert'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    document.title = "Login"
     const navigate = useNavigate()
     const alert = useAlert()
     const [input, setInput] = useState({

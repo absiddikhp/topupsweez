@@ -3,6 +3,7 @@ import { useAlert } from 'react-alert'
 import { Link } from 'react-router-dom'
 
 const ForgetPassword = () => {
+    document.title = "Forget Password"
     const alert = useAlert()
     const [email, setEmail] = useState("")
 
