@@ -39,17 +39,16 @@ footer .footer_support {
 }
 
 footer .footer_support:hover {
-  border: 1px solid #eee;
+  @apply border;
+  @apply border-green-400;
   cursor: pointer;
 }
 
 footer .footer_support i {
-  color: #eee;
   font-size: 1.6rem;
 }
 
 footer .footer_support div p {
-  color: #eee;
   font-size: 0.9rem;
   font-weight: 300;
 }
@@ -63,18 +62,16 @@ footer ul .social_icon {
 }
 
 footer ul .social_icon i:hover {
-  color: #cbc4c4;
   cursor: pointer;
 }
 
 footer ul li {
-  color: rgba(207, 202, 202, 0.856);
   margin-bottom: 0.8rem;
   cursor: pointer;
 }
 
 footer ul li:hover {
-  color: #eee;
+  @apply text-green-500;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }

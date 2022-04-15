@@ -35,16 +35,15 @@ footer {
   .footer_support {
     border: 1px solid rgba(207, 202, 202, 0.856);
     &:hover {
-      border: 1px solid #eee;
+      @apply border;
+      @apply border-green-400;
       cursor: pointer;
     }
     i {
-      color: #eee;
       font-size: 1.6rem;
     }
     div {
       p {
-        color: #eee;
         font-size: 0.9rem;
         font-weight: 300;
       }
@@ -58,18 +57,15 @@ footer {
       font-size: 1.6rem;
       i {
         &:hover {
-          color: rgb(203, 196, 196);
           cursor: pointer;
         }
       }
     }
     li {
-      color: rgba(207, 202, 202, 0.856);
-      // line-height: 2.3rem;
       margin-bottom: 0.8rem;
       cursor: pointer;
       &:hover {
-        color: #eee;
+        @apply text-green-500;
         transition: 0.2s linear;
       }
     }
