@@ -15,6 +15,18 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 header input {
   outline: none;
   border: 3px solid green;
@@ -86,5 +98,35 @@ footer ul li:hover {
 
 .userInfo i {
   color: #717171;
+}
+
+.active {
+  @apply border-green-500;
+}
+
+.active .icon {
+  display: block;
+}
+
+.active h2 {
+  display: block;
+}
+
+.active button {
+  display: block;
+}
+
+.daimonCardActive {
+  @apply border-2;
+  @apply border-orange-500;
+  @apply bg-orange-50;
+}
+
+.daimonCardActive .shadowIcon {
+  display: none;
+}
+
+.daimonCardActive .daimondIcon {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

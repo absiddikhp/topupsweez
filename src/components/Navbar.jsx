@@ -1,35 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
 import LoginMenu from './LoginMenu';
-
+import { FacKUser } from '../Apis/FackUser';
 const Navbar = () => {
-    const [logdin, setLogdin] = useState(true)
+    // Use This fack login or logout for showing face user loging 
+    // It will be remove after backend function add and set login funtionality with jwt for login or logout 
+
+    const [logdin, setLogdin] = useState(false)
+    useEffect(() => {
+        setLogdin(false)
+        setTimeout(() => {
+            setLogdin(true)
+        }, 3000);
+    }, [])
+    // customise alert message
     const alert = useAlert()
+    // Search bar Funtionality  
     const findSomething = (e) => {
         e.preventDefault()
         alert.show(<p className='normal-case'>Fail to found</p>, {
             type: "info",
-
         })
     }
     return (
-        <header className=' flex md:px-4 px-4 justify-between  items-center md:py-2 py-5 shadow sticky top-0 z-10 bg-white'>
+        <header className=' flex md:px-4 px-4 justify-between  items-center md:py-2 py-4 shadow sticky top-0 z-10 bg-white'>
             <div className='md:w-2/12 text-center' >
                 <Link to="/">
-                    <h1>Logo Logo </h1>
+                    <img src="/image/logo.png" alt="logo" className='lg:w-40 w-32 ' />
                 </Link>
             </div>
-            <div className=' md:block hidden md:w-10/12 ml-auto mr-auto p-2'>
+            <div className=' md:block hidden md:w-9/12 ml-auto mr-auto p-2'>
                 <form method='GET' onSubmit={findSomething}>
                     <input type="text" className='px-4 py-2  w-10/12 ' name="search" id="search" placeholder='Search...' autoComplete='off' />
-                    <button className='px-4 py-2 text-white ml-1 bg-green-700 rounded-md '>
+                    <button className='px-4 py-2 text-white ml-1 bg-green-700 rounded-md active:bg-green-600'>
                         search
                     </button>
                 </form>
             </div>
             {
-                logdin ? <LoginMenu /> : <div className='md:space-x-4  ml-auto flex space-x-2 md:w-3/12 '>
+                logdin ? <LoginMenu logding={setLogdin} user={FacKUser} /> : <div className='md:space-x-4  ml-auto flex space-x-2 md:w-3/12 '>
                     <Link to="/register">
                         <button className='bg-green-700 px-4 py-1.5 rounded-full text-white hover:bg-blue-700 transition-all inline'>Register</button>
                     </Link>

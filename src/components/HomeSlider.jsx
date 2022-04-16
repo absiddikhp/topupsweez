@@ -17,7 +17,7 @@ const HomeSlider = () => {
                     <div>
                         <a href="#">
                             <figure>
-                                <img className='w-full' src="/image/1.jpg" alt="" />
+                                <img className='w-full' src="/image/1.jpg" alt="2" />
                             </figure>
                         </a>
                     </div>

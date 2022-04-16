@@ -74,17 +74,18 @@ export const Footer = () => {
                         <div className='flex items-center space-x-4 social_icon mt-2'>
                             <div className=''>
                                 <a href="#">
-                                    <img src="/image/icon/facebook.png" alt="facebook" className='w-10 h-10 ' />
+                                    {/* <img src="/image/icon/facebook.png" alt="facebook" className='w-10 h-10 ' /> */}
+                                    <i className="fa-brands fa-facebook w-10 h-10 hover:text-blue-600 "></i>
                                 </a>
                             </div>
                             <div>
                                 <a href="#">
-                                    <img src="/image/icon/youtube.png" alt="Youtube" className='w-10' />
+                                    <i className="fa-brands fa-youtube w-10 h-10 hover:text-red-600"></i>
                                 </a>
                             </div>
                             <div>
                                 <a href="#">
-                                    <img src="/image/icon/instagram.png" alt="instagram" className='w-10' />
+                                    <i className="fa-brands fa-instagram w-10 h-10 hover:text-pink-600"></i>
                                 </a>
                             </div>
                         </div>

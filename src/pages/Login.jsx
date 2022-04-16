@@ -6,6 +6,7 @@ const Login = () => {
     document.title = "Login"
     const navigate = useNavigate()
     const alert = useAlert()
+    const [submitText, setSubmitText] = useState(false)
     const [input, setInput] = useState({
         email: "",
         password: ""
@@ -34,6 +35,7 @@ const Login = () => {
                 transitions: "fade"
             })
         } else {
+            setSubmitText(true)
             alert.show(<p className='normal-case'>Connect Your Backend</p>, {
                 type: "info",
                 transitions: "fade"
@@ -81,7 +83,7 @@ const Login = () => {
                         <div className='text-right my-2'>
                             <Link to="/forget-password" className='underline text-green-700' >Forgot Password?</Link>
                         </div>
-                        <button className='bg-green-700 mt-1 rounded-md text-white py-1.5  px-10 text-xl'>Login</button>
+                        <button className='bg-green-700 mt-1 rounded-md text-white py-1.5  px-10 text-xl'>{submitText ? "processing..." : " Register"}</button>
                     </form>
                     <div className='mt-6'>
                         <p className='text-center md:text-md text-sm'>Don't have any account <Link to="/register" className='text-blue-700 hover:underline'>Create Account</Link> </p>
