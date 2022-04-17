@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { FackTransition } from './../Apis/FackTransition';
+import { FackTransition } from '../../Apis/FackTransition';
 import { Link } from 'react-router-dom';
 
 const Wallet = () => {
+    document.title = "sweez | Wallet"
     const [amount, setAmount] = useState(48)
     const [transition, setTransition] = useState(FackTransition)
     return (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { FacKUser } from '../Apis/FackUser'
+import { FacKUser } from '../../Apis/FackUser'
 const Profile = () => {
+    document.title = "sweez | Profile"
     const [userData, setUserData] = useState(FacKUser)
     const [addNumber, setAddNumber] = useState(false)
     // if phone state have the number then number field not showing 

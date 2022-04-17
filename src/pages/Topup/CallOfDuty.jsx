@@ -1,8 +1,15 @@
 import React from 'react'
+import { GameTitle } from '../../components/topuppages/Headling'
+import { MainBox } from '../../components/topuppages/MainBox'
 
 const CallOfDuty = () => {
+    document.title = "sweez | Call of duty"
     return (
-        <div>CallOfDuty</div>
+        <>
+            <MainBox>
+                <GameTitle title={"Call Of Duty"} />
+            </MainBox>
+        </>
     )
 }
 

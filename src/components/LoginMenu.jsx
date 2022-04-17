@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const LoginMenu = ({ logding, user }) => {
+const LoginMenu = ({ logding, user, progress }) => {
     const navigate = useNavigate()
     // Navbar profile Drop Down menu toggle system
     const [dropIcon, setDropIcon] = useState(false)
@@ -10,6 +10,7 @@ const LoginMenu = ({ logding, user }) => {
     const ToggleMenu = () => {
         setDropDown(!dropDown)
         setDropIcon(!dropIcon)
+        progress()
     }
 
     // Fack Logout System . real logout will remove  user cookie from browser
@@ -18,10 +19,11 @@ const LoginMenu = ({ logding, user }) => {
         navigate("/")
         setDropDown(!dropDown)
         logding(false)
+        progress()
     }
     return (
-        <div className='relative ml-auto  space-x-2 md:w-1.5/12 '>
-            <button onClick={ToggleMenu} className='hover:bg-green-200 hover:border-green-400 px-2 py-2 rounded-full border-2 flex items-center text-sm w-40 gap-2'>
+        <div className='relative z-50   '>
+            <button onClick={ToggleMenu} className='hover:bg-green-200 hover:border-green-400 px-2 py-2 rounded-full border-2 flex items-center text-sm w-40 gap-x-2'>
                 <img src="/image/icon/man.png" className='w-8 h-8' alt="" />
                 <h1 className=''>
                     {user.username}
@@ -31,7 +33,7 @@ const LoginMenu = ({ logding, user }) => {
                 }
 
             </button>
-            <div className={`absolute top-14 right-2 ${dropDown ? "flex" : "hidden"} flex-col bg-gray-50 shadow-md transition duration-100 px-2 py-3 rounded w-52 border `}>
+            <div className={` absolute top-14 right-2 ${dropDown ? "flex" : "hidden"} flex-col bg-gray-50 shadow-md transition duration-100 px-2 py-3 rounded w-52 border `}>
                 <ul className='userInfo'>
                     <Link to="/profile" onClick={ToggleMenu}>
                         <li className='px-2 py-2 hover:bg-green-200 rounded cursor-pointer'>

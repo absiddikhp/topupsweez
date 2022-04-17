@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 const AddMoney = () => {
+    document.title = "sweez | Add-money"
     useEffect(() => {
         let links = document.querySelectorAll("li")
         links.forEach(li => {
@@ -70,7 +71,7 @@ const AddMoney = () => {
                             <h1 className='text-green-700 lg:text-2xl text-md'>Select Payment Method</h1>
                         </div>
                         <ul className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-2   p-2 mt-4 gap-4  '>
-                            <li className='lg:text-xl text-sm cursor-pointer shadow hover:border-green-700 rounded overflow-hidden text-center  relative border py-2'>
+                            <li className='h-min lg:text-xl text-sm cursor-pointer shadow hover:border-green-700 rounded overflow-hidden text-center  relative border py-2'>
                                 <i className={`icon fa-solid fa-square-check absolute top-0 left-1 text-xl hidden text-green-700`}></i>
                                 <img src="/image/bank/bkash.jpg" alt="bkash" className='mx-auto lg:w-full ' />
                                 <h1>Bkash</h1>
@@ -82,7 +83,7 @@ const AddMoney = () => {
                                 </CopyToClipboard>
 
                             </li>
-                            <li className=' lg:text-xl text-sm cursor-pointer shadow hover:border-green-700 rounded overflow-hidden text-center  relative border py-2'>
+                            <li className='h-min lg:text-xl text-sm cursor-pointer shadow hover:border-green-700 rounded overflow-hidden text-center  relative border py-2'>
                                 <i className={`icon fa-solid fa-square-check absolute top-0 left-1 text-xl hidden text-green-700`}></i>
                                 <img src="/image/bank/nagad.jpg" alt="Nagad" className='mx-auto' />
                                 <h1>Nagad</h1>
@@ -93,7 +94,7 @@ const AddMoney = () => {
                                     </button>
                                 </CopyToClipboard>
                             </li>
-                            <li className='lg:text-xl text-sm cursor-pointer shadow hover:border-green-700 rounded overflow-hidden text-center  relative border py-2'>
+                            <li className='h-min lg:text-xl text-sm cursor-pointer shadow hover:border-green-700 rounded overflow-hidden text-center  relative border py-2'>
                                 <i className={`icon fa-solid fa-square-check absolute top-0 left-1 text-xl hidden text-green-700`}></i>
                                 <img src="/image/bank/rocket.jpg" alt="bkash" className='mx-auto' />
                                 <h1>Rocket</h1>

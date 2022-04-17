@@ -1,8 +1,16 @@
 import React from 'react'
+import { GameTitle } from '../../components/topuppages/Headling'
+import { MainBox } from '../../components/topuppages/MainBox'
 
 const PubgMobile = () => {
+    document.title = "sweez | Pubg Mobile"
+
     return (
-        <div>PubgMobile</div>
+        <>
+            <MainBox>
+                <GameTitle title={"Pubg Mobile"} />
+            </MainBox>
+        </>
     )
 }
 
