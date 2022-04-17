@@ -1,13 +1,6 @@
 export const IngameFackApi = [
   {
     id: 1,
-    daimond: 110,
-    weekly: "",
-    price: 234,
-    available: false,
-  },
-  {
-    id: 1,
     daimond: null,
     weekly: "",
     monthly: "Monthly",
