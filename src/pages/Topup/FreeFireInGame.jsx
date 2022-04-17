@@ -5,7 +5,7 @@ import { GameTitle, Headling } from '../../components/topuppages/Headling'
 import { MainBox } from '../../components/topuppages/MainBox'
 import { InputDiv } from './../../components/topuppages/InputDiv';
 import { IngameFackApi } from './../../Apis/IngameFackApi';
-import DaimondBox from '../../components/topuppages/DaimondBox';
+import DaimondBox from '../../components/Card/DaimondBox';
 import { DaimonSelected } from './../../hooks/DaimonSelected';
 
 const FreeFireInGame = () => {
@@ -27,8 +27,8 @@ const FreeFireInGame = () => {
                                     <input type="text" name="facebook" id="facebook" placeholder='Facebook Username' className='p-2 outline-none  focus:bg-green-200 rounded-md' />
                                 </InputDiv>
                                 <InputDiv>
-                                    <label htmlFor="password">Password</label>
-                                    <input type="password" name="fb_password" id="password" placeholder='Facebook Password' className='p-2 outline-none focus:bg-green-200 rounded-md' />
+                                    <label htmlFor="facebookpassword">Password</label>
+                                    <input type="password" name="fb_password" id="facebookpassword" placeholder='Facebook Password' className='p-2 outline-none focus:bg-green-200 rounded-md' />
                                 </InputDiv>
                             </div>
                             <h1 className='flex items-center mx-auto lg:rotate-90 text-orange-500 '><hr className='w-10 mx-2' /> <span>OR</span> <hr className="w-10 mx-2" /> </h1>
@@ -38,12 +38,22 @@ const FreeFireInGame = () => {
                                     <input type="text" name="gmail" id="gmail" placeholder='Gmail Account' className='p-2 outline-none focus:bg-green-200 rounded-md' />
                                 </InputDiv>
                                 <InputDiv>
-                                    <label htmlFor="password">Password</label>
-                                    <input type="password" name="gm_password" id="password" placeholder='Gmail Password' className='p-2 outline-none focus:bg-green-200 rounded-md' />
+                                    <label htmlFor="gmailpassword">Password</label>
+                                    <input type="password" name="gm_password" id="gmailpassword" placeholder='Gmail Password' className='p-2 outline-none focus:bg-green-200 rounded-md' />
                                 </InputDiv>
                             </div>
-
-
+                        </div>
+                    </div>
+                </DivBox>
+                <DivBox>
+                    <div className="flex lg:flex-row flex-col justify-between lg:space-y-0 space-y-3 space-x-2">
+                        <div className='flex flex-col w-full'>
+                            <label htmlFor="playerId">Name</label>
+                            <input type="text" name="playerName" id="playerName" placeholder='Enter your name [ optional ]' autoComplete='off' className='border-2 px-3 py-2 my-1.5 rounded-md border-green-600 focus:border-green-800 outline-none ' />
+                        </div>
+                        <div className='flex flex-col w-full'>
+                            <label htmlFor="playerId">Phone Number</label>
+                            <input type="number" name="playerPhone" id="playerNumber" placeholder='Enter your Number [ optional ]' autoComplete='off' className='border-2 px-3 py-2 my-1.5 rounded-md border-green-600 focus:border-green-800 outline-none' />
                         </div>
                     </div>
                 </DivBox>

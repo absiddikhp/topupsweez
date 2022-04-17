@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { GameTitle } from '../../components/topuppages/Headling';
+import React, { useState } from 'react'
 import { MainBox } from './../../components/topuppages/MainBox';
-import { Headling } from './../../components/topuppages/Headling';
-import DaimondBox from '../../components/topuppages/DaimondBox';
+import { GameTitle, Headling } from './../../components/topuppages/Headling';
+import DaimondBox from '../../components/Card/DaimondBox';
 import { FackDaimondApi } from '../../Apis/FackDaimonApi';
 import { DivBox } from '../../components/topuppages/DivBox';
 import { DaimonSelected } from '../../hooks/DaimonSelected';
@@ -16,16 +15,29 @@ const FreeFireIdCode = () => {
     return (
         <>
             <MainBox>
-                <GameTitle title="Free Fire ( ID CODE )" />
+                < GameTitle title={"Free Fire ( ID-CODE )"} />
+
                 <form>
-                    <DivBox className='mt-8 mb-3 shadow-md rounded-md py-3 lg:px-5 px-3'>
+                    <DivBox >
                         <Headling index={1} text="Account Info" />
                         <div className='flex flex-col'>
                             <label htmlFor="playerId">Player Id <span className='text-green-700'>*</span></label>
                             <input type="text" name="playerId" id="playerId" placeholder='Enter Player Id' autoComplete='off' className='border-2 px-3 py-2 my-1.5 rounded-md border-green-600 focus:border-green-800 outline-none' />
                         </div>
                     </DivBox>
-                    <DivBox className='mt-8 mb-3 shadow-md rounded-md py-3 lg:px-5 px-3'>
+                    <DivBox>
+                        <div className="flex lg:flex-row flex-col justify-between lg:space-y-0 space-y-3 space-x-2">
+                            <div className='flex flex-col w-full'>
+                                <label htmlFor="playerId">Name</label>
+                                <input type="text" name="playerName" id="playerName" placeholder='Enter your name [ optional ]' autoComplete='off' className='border-2 px-3 py-2 my-1.5 rounded-md border-green-600 focus:border-green-800 outline-none ' />
+                            </div>
+                            <div className='flex flex-col w-full'>
+                                <label htmlFor="playerId">Phone Number</label>
+                                <input type="number" name="playerPhone" id="playerNumber" placeholder='Enter your Number [ optional ]' autoComplete='off' className='border-2 px-3 py-2 my-1.5 rounded-md border-green-600 focus:border-green-800 outline-none' />
+                            </div>
+                        </div>
+                    </DivBox>
+                    <DivBox>
                         <Headling index={2} text="Select Recharge" />
                         <div className='mainBox mt-4 mb-3 text-center grid lg:grid-cols-2 sm:grid-cols-2 gap-2 gap-y-5'>
                             {

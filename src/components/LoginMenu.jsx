@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-const LoginMenu = ({ logding, user, progress }) => {
+const LoginMenu = ({ user, progress }) => {
     const navigate = useNavigate()
     // Navbar profile Drop Down menu toggle system
     const [dropIcon, setDropIcon] = useState(false)
@@ -18,8 +18,8 @@ const LoginMenu = ({ logding, user, progress }) => {
     const logout = () => {
         navigate("/")
         setDropDown(!dropDown)
-        logding(false)
         progress()
+
     }
     return (
         <div className='relative z-50   '>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
@@ -30,11 +30,18 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
+  const [userLoggdin, setUserLoggdin] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setUserLoggdin(true);
+    }, 4000);
+  }, []);
+
   const [progress, setProgress] = useState(0);
   ScrollToTop();
   return (
     <>
-      <Navbar progress={() => setProgress(100)} />
+      <Navbar progress={() => setProgress(100)} isAuth={userLoggdin} />
       <LoadingBar
         color="#F97316"
         progress={progress}
@@ -43,14 +50,21 @@ const App = () => {
       />
       <Routes>
         <Route path="/" element={<Home progress={() => setProgress(100)} />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
-        {/* Protected Routes */}
-        <Route path="profile" element={<Profile />} />
-        <Route path="profile/order" element={<Order />} />
-        <Route path="wallet" element={<Wallet />} />
-        <Route path="add-money" element={<AddMoney />} />
+        {!userLoggdin ? (
+          <>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+          </>
+        ) : (
+          <>
+            {/* Protected Routes */}
+            <Route path="profile" element={<Profile />} />
+            <Route path="profile/order" element={<Order />} />
+            <Route path="wallet" element={<Wallet />} />
+            <Route path="add-money" element={<AddMoney />} />
+          </>
+        )}
 
         {/* Topup Pages */}
         <Route path="/topup/freefire-id-code" element={<FreeFireIdCode />} />
@@ -59,6 +73,7 @@ const App = () => {
         <Route path="/topup/arena-of-valor" element={<ArenaOfValor />} />
         <Route path="/topup/call-of-duty" element={<CallOfDuty />} />
         <Route path="/topup/pubg-mobile" element={<PubgMobile />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <MessengerCustomerChat
         pageId="100997619156440"

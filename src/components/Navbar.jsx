@@ -1,20 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import LoginMenu from './LoginMenu';
 import { FacKUser } from '../Apis/FackUser';
-const Navbar = ({ progress }) => {
-    // Use This fack login or logout for showing face user loging 
-    // It will be remove after backend function add and set login funtionality with jwt for login or logout 
-
-    const [logdin, setLogdin] = useState(false)
-    useEffect(() => {
-        setLogdin(false)
-        setTimeout(() => {
-            setLogdin(true)
-        }, 3000);
-    }, [])
-    // customise alert message
-
+const Navbar = ({ progress, isAuth }) => {
     return (
         <header className='flex p-4 justify-between items-center shadow sticky top-0 bg-white z-50'>
             <div className=' text-center' >
@@ -42,7 +30,7 @@ const Navbar = ({ progress }) => {
             </ul>
             <div className=''>
                 {
-                    logdin ? <LoginMenu logding={setLogdin} user={FacKUser} progress={progress} /> : <div className='md:space-x-4  ml-auto flex space-x-2 '>
+                    isAuth ? <LoginMenu logout={isAuth} user={FacKUser} progress={progress} /> : <div className='md:space-x-4  ml-auto flex space-x-2 '>
                         <Link to="/register" onClick={progress}>
                             <button className='bg-green-700 px-4 py-1.5 rounded-full text-white hover:bg-blue-700 transition-all inline'>Register</button>
                         </Link>
